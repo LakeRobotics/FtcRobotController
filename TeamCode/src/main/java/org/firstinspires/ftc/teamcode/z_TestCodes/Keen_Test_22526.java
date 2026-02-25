@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.OpMode;
+package org.firstinspires.ftc.teamcode.z_TestCodes;
 
 //auto opmode libraries
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -21,18 +21,16 @@ import org.firstinspires.ftc.teamcode.Utility.*;
 
 
 //set driver hub name for this opmode
-@TeleOp(name = "Keen_Test")
+@TeleOp(name = "Keen_Test_22526")
 
 
 
-public class Keen_Test extends LinearOpMode {
+public class Keen_Test_22526 extends LinearOpMode {
 
 
 
 
 //   DEFINE  VARIABLES
-
-
 
 
     //measured values for initial position of robot settings
@@ -97,7 +95,7 @@ public class Keen_Test extends LinearOpMode {
     //timer function
    // ElapsedTime runtime = new ElapsedTime()
     // PID calculator - parameters = kp, KI, KD, ClipValue
-    PIDController pid = new PIDController(0.01,0.01,0.01, 0.25);
+    PIDController pid = new PIDController(0.01,0.01,0.01, 0.50);
     //2d position array fro initial setting of our odometry computer
     Pose2D initialPos = new Pose2D(DistanceUnit.INCH,X_i,Y_i,AngleUnit.DEGREES,Yaw_i);
     //calculation of vectors (currently 2/24/26 only difference vector targetVec variable)
@@ -184,7 +182,7 @@ public class Keen_Test extends LinearOpMode {
 
 
             telemetry.addLine("OUTSIDE While Loop");
-            telemetry.addData("difference", (position[5]-targetVec[2]));
+            telemetry.addData("difference", (position[5]-targetVec[4]));
             telemetry.addData("currentX",currentX);
             telemetry.addData("currentY", currentY);
             telemetry.addData("currentHeading",currentHeading);

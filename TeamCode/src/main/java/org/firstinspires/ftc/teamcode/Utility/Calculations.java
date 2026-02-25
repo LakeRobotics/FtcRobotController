@@ -32,18 +32,12 @@ public class Calculations {
         double[] targetPos = targetPosition;
         double[] position = currentPosition;
         double phi = Phi;
-        double turnAngle;
+        double turnAngle = 0.0;
 
         //target in Q1
         if( (targetPos[0]>0) && (targetPos[1]>0) ){
             //phi (+), arenaAngleCoord (-)
-            turnAngle = 270 + phi;
-            //if required to turn more than 180, turn opposite direction
-            //towards desired turnAngle
-            if((turnAngle - position[5])>180){
-                turnAngle = turnAngle - 360;
-            }
-            return turnAngle;
+            turnAngle = phi - 90;
         }
 
 
@@ -51,12 +45,6 @@ public class Calculations {
         if( (targetPos[0]<0) && (targetPos[1]>0) ){
             //phi (-), arenaAngleCoord (+)
             turnAngle = 90 + phi;
-            //if required to turn more than 180, turn opposite direction
-            //towards desired turnAngle
-            if((turnAngle - position[5])>180){
-                turnAngle = turnAngle - 360;
-            }
-            return turnAngle;
         }
 
 
@@ -64,28 +52,16 @@ public class Calculations {
         if( (targetPos[0]<0) && (targetPos[1]<0) ){
             //phi (+), arenaAngleCoord (+)
             turnAngle = 90 + phi;
-            //if required to turn more than 180, turn opposite direction
-            //towards desired turnAngle
-            if((turnAngle - position[5])>180){
-                turnAngle = turnAngle - 360;
-            }
-            return turnAngle;
         }
 
 
         //target in Q4
         if( (targetPos[0]>0) && (targetPos[1]<0) ){
             //phi (-), arenaAngleCoord (-)
-            turnAngle = 270 + phi;
-            //if required to turn more than 180, turn opposite direction
-            //towards desired turnAngle
-            if((turnAngle - position[5])>180){
-                turnAngle = turnAngle - 360;
-            }
-            return turnAngle;
+            turnAngle = phi - 90;
         }
 
-
+        return turnAngle;
     }
 
 
