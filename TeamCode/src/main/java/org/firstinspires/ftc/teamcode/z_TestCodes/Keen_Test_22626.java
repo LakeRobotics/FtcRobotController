@@ -14,7 +14,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
 
 //Lake Robotics Utility folder
 import org.firstinspires.ftc.teamcode.Utility.*;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
+@Disabled
 //set driver hub name for this opmode
 @TeleOp(name = "Keen_Test_22626")
 
