@@ -10,7 +10,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
 
 import org.firstinspires.ftc.teamcode.Utility.*;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
+@Disabled
 
 @TeleOp(name = "odo wheeltest")
 public class odowheeltest extends LinearOpMode {

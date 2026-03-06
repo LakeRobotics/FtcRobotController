@@ -20,7 +20,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
 import org.firstinspires.ftc.teamcode.Utility.*;
 
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
+@Disabled
 //set driver hub name for this opmode
 @Autonomous(name = "test 22326")
 
