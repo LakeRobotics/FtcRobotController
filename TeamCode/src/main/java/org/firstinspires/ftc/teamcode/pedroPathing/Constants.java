@@ -23,11 +23,11 @@ public class Constants {
             .rightRearMotorName("BackRight")
             .leftRearMotorName("BackLeft")
             .leftFrontMotorName("FrontLeft")
-            .leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
+            .leftFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
-            .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD);
-
+            .rightRearMotorDirection(DcMotorSimple.Direction.REVERSE)
+            .xVelocity(85.0);
     public static PinpointConstants localizerConstants = new PinpointConstants()
             .forwardPodY(1.06299)//forward pod offset. must be 0 on x axis, units in inches
             .strafePodX(-0.11811)//sideways pod offset. must be zero on y axis to the right/back of the robot was negative
