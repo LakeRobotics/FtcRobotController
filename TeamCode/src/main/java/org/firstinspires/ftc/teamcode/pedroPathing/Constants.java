@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.pedroPathing;
 
+import com.pedropathing.control.FilteredPIDFCoefficients;
+import com.pedropathing.control.PIDFCoefficients;
 import com.pedropathing.follower.Follower;
 import com.pedropathing.follower.FollowerConstants;
 import com.pedropathing.ftc.FollowerBuilder;
@@ -14,20 +16,28 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
     public static FollowerConstants followerConstants = new FollowerConstants()
-                    .mass(5.0);//change mass
+                    .mass(5.0)
+                    .forwardZeroPowerAcceleration(25.0)
+                    .lateralZeroPowerAcceleration(25.0)
+                    .translationalPIDFCoefficients(new PIDFCoefficients(0.1, 0.2, 0.3, 0.4))
+                    .headingPIDFCoefficients(new PIDFCoefficients(0.1, 0.2, 0.3, 0.4))
+                    .drivePIDFCoefficients(new FilteredPIDFCoefficients(0.1, 0.2, 0.3, 0.4, 0.5))
+                    .centripetalScaling(0.0005)
+                     ;//change values here
 
     public static MecanumConstants driveConstants = new MecanumConstants()
-            .maxPower(1)
+            .maxPower(1.0)
             //change motor name
             .rightFrontMotorName("FrontRight")
             .rightRearMotorName("BackRight")
             .leftRearMotorName("BackLeft")
             .leftFrontMotorName("FrontLeft")
-            .leftFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
+            .leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
-            .rightRearMotorDirection(DcMotorSimple.Direction.REVERSE)
-            .xVelocity(85.0);
+            .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD)
+            .xVelocity(85.0)
+            .yVelocity(85.0);
     public static PinpointConstants localizerConstants = new PinpointConstants()
             .forwardPodY(1.06299)//forward pod offset. must be 0 on x axis, units in inches
             .strafePodX(-0.11811)//sideways pod offset. must be zero on y axis to the right/back of the robot was negative
