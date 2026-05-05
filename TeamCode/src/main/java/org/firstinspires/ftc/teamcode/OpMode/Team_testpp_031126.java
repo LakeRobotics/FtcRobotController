@@ -9,7 +9,7 @@ import com.pedropathing.util.Timer;
 @Autonomous
 public class Team_testpp_031126 extends OpMode {
 
-    private Follower follower;
+   // private Follower follower;
 
     private Timer pathtimer, opModeTimer;
 
