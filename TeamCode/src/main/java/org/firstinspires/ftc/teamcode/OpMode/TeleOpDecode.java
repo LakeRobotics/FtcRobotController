@@ -6,7 +6,7 @@
  import com.qualcomm.robotcore.hardware.Servo;
  import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
-@Disabled
+
  @TeleOp(name = "TeleOp - Decode")
  public class TeleOpDecode extends LinearOpMode {
 
@@ -14,11 +14,11 @@
    private DcMotor FrontRightWheel;
    private DcMotor BackLeftWheel;
    private DcMotor BackRightWheel;
-   private Servo RightTower;
-   private Servo LeftTower;
-   private Servo LauncherServo;
-   private DcMotor LeftLaunchMotor;
-   private DcMotor RightLaunchMotor;
+   //private Servo RightTower;
+   //private Servo LeftTower;
+   //private Servo LauncherServo;
+   //private DcMotor LeftLaunchMotor;
+   //private DcMotor RightLaunchMotor;
 
 
 
@@ -33,11 +33,11 @@
      FrontRightWheel = hardwareMap.get(DcMotor.class, "FrontRightWheel");
      BackLeftWheel = hardwareMap.get(DcMotor.class, "BackLeftWheel");
      BackRightWheel = hardwareMap.get(DcMotor.class, "BackRightWheel");
-     RightTower = hardwareMap.get(Servo.class, "RightTower");
-     LeftTower = hardwareMap.get(Servo.class, "LeftTower");
-     LauncherServo = hardwareMap.get(Servo.class, "LauncherServo");
-     LeftLaunchMotor = hardwareMap.get(DcMotor.class, "LeftLaunchMotor");
-     RightLaunchMotor = hardwareMap.get(DcMotor.class, "RightLaunchMotor");
+     //RightTower = hardwareMap.get(Servo.class, "RightTower");
+     //LeftTower = hardwareMap.get(Servo.class, "LeftTower");
+     //LauncherServo = hardwareMap.get(Servo.class, "LauncherServo");
+     //LeftLaunchMotor = hardwareMap.get(DcMotor.class, "LeftLaunchMotor");
+     //RightLaunchMotor = hardwareMap.get(DcMotor.class, "RightLaunchMotor");
 
      FrontLeftWheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
      FrontRightWheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -69,7 +69,7 @@
            BackRightWheel.setPower(0);
          }
 
-
+/*
         if (gamepad2.right_bumper) {
            RightTower.setPosition(0);
            sleep(1000);
@@ -77,7 +77,6 @@
            //sleep(1000);
            RightTower.setPosition(0.12);
          }
-
 
          if (gamepad2.left_bumper) {
            LeftTower.setPosition(0.3);
@@ -105,7 +104,7 @@
          LeftLaunchMotor.setPower(-gamepad2.left_trigger * power);
          RightLaunchMotor.setPower(gamepad2.left_trigger * power);
 
-
+*/
        }
      }
    }
