@@ -16,28 +16,28 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
     public static FollowerConstants followerConstants = new FollowerConstants()
-                    .mass(5.0)
-                    .forwardZeroPowerAcceleration(25.0)
-                    .lateralZeroPowerAcceleration(25.0)
-                    .translationalPIDFCoefficients(new PIDFCoefficients(0.1, 0.2, 0.3, 0.4))
-                    .headingPIDFCoefficients(new PIDFCoefficients(0.1, 0.2, 0.3, 0.4))
-                    .drivePIDFCoefficients(new FilteredPIDFCoefficients(0.1, 0.2, 0.3, 0.4, 0.5))
+                    .mass(6.24)
+                    .forwardZeroPowerAcceleration(-29.56)
+                    .lateralZeroPowerAcceleration(-50.63)
+                    .translationalPIDFCoefficients(new PIDFCoefficients(0.05, 0.0, 0.001, 0.025))
+                    .headingPIDFCoefficients(new PIDFCoefficients(0.5, 0.0, 0.002, 0.025))
+                    .drivePIDFCoefficients(new FilteredPIDFCoefficients(0.6, 0, 0.001, 0.6, 0.025))
                     .centripetalScaling(0.0005)
                      ;//change values here
 
     public static MecanumConstants driveConstants = new MecanumConstants()
             .maxPower(1.0)
             //change motor name
-            .rightFrontMotorName("FrontRight")
-            .rightRearMotorName("BackRight")
-            .leftRearMotorName("BackLeft")
-            .leftFrontMotorName("FrontLeft")
+            .rightFrontMotorName("FrontRightWheel")
+            .rightRearMotorName("BackRightWheel")
+            .leftRearMotorName("BackLeftWheel")
+            .leftFrontMotorName("FrontLeftWheel")
             .leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
             .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD)
-            .xVelocity(85.0)
-            .yVelocity(85.0);
+            .xVelocity(78.9)
+            .yVelocity(83.1);
     public static PinpointConstants localizerConstants = new PinpointConstants()
             .forwardPodY(1.06299)//forward pod offset. must be 0 on x axis, units in inches
             .strafePodX(-0.11811)//sideways pod offset. must be zero on y axis to the right/back of the robot was negative
