@@ -1,10 +1,11 @@
  package org.firstinspires.ftc.teamcode.Utility;
 
+ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
  import com.qualcomm.robotcore.hardware.HardwareMap;
  import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
  import com.qualcomm.robotcore.hardware.DistanceSensor;
 
-
+@Disabled
  public class IRSensor {
 
 

@@ -8,6 +8,7 @@ import com.pedropathing.paths.PathChain;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.pedropathing.util.Timer;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
@@ -17,6 +18,10 @@ public class Team_testpp_031126 extends OpMode {
     private Follower follower;
 
     private Timer pathTimer, opModeTimer;
+    private DcMotorSimple FrontLeftWheel;
+    private DcMotorSimple FrontRightWheel;
+    private DcMotorSimple BackLeftWheel;
+    private DcMotorSimple BackRightWheel;
 
 
     public enum PathState{
@@ -28,7 +33,9 @@ public class Team_testpp_031126 extends OpMode {
 
         SHOOT_PRELOAD,
 
-        DRIVE_FIRST_POS_SECOND_POS
+        DRIVE_FIRST_POS_SECOND_POS,
+
+        STOP
 
     }
 
@@ -73,6 +80,12 @@ private PathChain driveStartPosFirstPos, driveFirstPosSecondPos;  //path 1
                 if(!follower.isBusy()) {
                     telemetry.addLine("Done all paths");
                 }
+            case STOP:
+                FrontLeftWheel.setPower(0);
+                FrontRightWheel.setPower(0);
+                BackLeftWheel.setPower(0);
+                BackRightWheel.setPower(0);
+                break;
             default:
                 telemetry.addLine("No State Commanded");
                 break;
