@@ -3,6 +3,7 @@
  import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  import com.qualcomm.robotcore.hardware.DcMotor;
+ import com.qualcomm.robotcore.hardware.DcMotorSimple;
  import com.qualcomm.robotcore.hardware.Servo;
  import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
@@ -27,7 +28,7 @@
      double forward;
      double strafe;
      double rotation;
-     double power = 1;
+     double powerLimit = 1;
 
      FrontLeftWheel = hardwareMap.get(DcMotor.class, "FrontLeftWheel");
      FrontRightWheel = hardwareMap.get(DcMotor.class, "FrontRightWheel");
@@ -44,9 +45,10 @@
      BackLeftWheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
      BackRightWheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-
-
-
+     FrontLeftWheel.setDirection(DcMotorSimple.Direction.FORWARD);
+     BackLeftWheel.setDirection(DcMotorSimple.Direction.REVERSE);
+     FrontRightWheel.setDirection(DcMotorSimple.Direction.FORWARD);
+     BackRightWheel.setDirection(DcMotorSimple.Direction.REVERSE);
 
      waitForStart();
      if (opModeIsActive()) {
@@ -57,10 +59,10 @@
          forward = gamepad1.right_stick_y;
          rotation = gamepad1.left_stick_x;
 
-         FrontLeftWheel.setPower(-(strafe - (forward - rotation)));
-         FrontRightWheel.setPower(-(strafe + forward + rotation));
-         BackLeftWheel.setPower(-(strafe + (forward - rotation)));
-         BackRightWheel.setPower(-(strafe - (forward + rotation)));
+         FrontLeftWheel.setPower((-(strafe - (forward - rotation)))*powerLimit);
+         FrontRightWheel.setPower((-(strafe + forward + rotation))*powerLimit);
+         BackLeftWheel.setPower((-(strafe + (forward - rotation)))*powerLimit);
+         BackRightWheel.setPower((-(strafe - (forward + rotation)))*powerLimit);
 
          if(strafe == 0.0 && forward == 0.0 && rotation == 0.0){
            FrontLeftWheel.setPower(0);
