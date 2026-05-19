@@ -93,10 +93,10 @@
      FSValue1 = FSensor1.getDistance(DistanceUnit.CM);
      FSValue2 = FSensor2.getDistance(DistanceUnit.CM);
 
-     detectedDistances[0] = BSValue;
-     detectedDistances[1] = FSValue;
-     detectedDistances[2] = RSValue;
-     detectedDistances[3] = LSValue;
+     //detectedDistances[0] = BSValue;
+     //detectedDistances[1] = FSValue;
+     //detectedDistances[2] = RSValue;
+     //detectedDistances[3] = LSValue;
 
      return detectedDistances;
      } // end getvalue method
